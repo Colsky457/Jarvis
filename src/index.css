@@ -7,3 +7,4 @@ body { margin: 0; background: #020617; }
 .transcript { margin-top: 8px; font-size: 16px; color: #e2e8f0; max-width: 60vw; }
 button { margin-top: 12px; padding: 8px 16px; background: #0ea5e9; color: white; border: none; border-radius: 6px; cursor: pointer; }
 button:disabled { opacity: 0.5; }
+.error { margin-top: 6px; font-size: 12px; color: #f87171; }
