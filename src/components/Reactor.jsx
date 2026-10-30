@@ -61,7 +61,7 @@ export default function Reactor({ status }) {
     return () => {
       cancelAnimationFrame(raf)
       window.removeEventListener('resize', onResize)
-      mount.removeChild(renderer.domElement)
+      if (renderer.domElement.parentNode === mount) mount.removeChild(renderer.domElement)
       renderer.dispose()
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps

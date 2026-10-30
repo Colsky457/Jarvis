@@ -66,7 +66,7 @@ export function useVoice({ onCommand } = {}) {
     }
 
     rec.onerror = (e) => {
-      console.warn('recognition error', e.error)
+      if (import.meta.env.DEV) console.warn('recognition error', e.error)
     }
     rec.onend = () => {
       // auto-restart

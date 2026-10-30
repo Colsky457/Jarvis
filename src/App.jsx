@@ -1,10 +1,13 @@
+import { useCallback } from 'react'
 import Reactor from './components/Reactor.jsx'
 import { useVoice } from './hooks/useVoice.js'
 
 export default function App() {
-  const voice = useVoice({ onCommand: (cmd, speak) => {
+  const onCommand = useCallback((cmd, speak) => {
     speak(`You said: ${cmd}`)
-  } })
+  }, [])
+
+  const voice = useVoice({ onCommand })
 
   return (
     <div className="app">
