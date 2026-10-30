@@ -70,11 +70,11 @@ export function useVoice({ onCommand } = {}) {
     }
     rec.onend = () => {
       // auto-restart
-      try { rec.start() } catch (_) {}
+      try { rec.start() } catch (e) { void e }
     }
 
     recognitionRef.current = rec
-    try { rec.start() } catch (_) {}
+    try { rec.start() } catch (e) { void e }
     setStatus('listening')
   }, [onCommand, speak])
 

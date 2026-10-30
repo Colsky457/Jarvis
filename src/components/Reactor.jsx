@@ -4,9 +4,9 @@ import * as THREE from 'three'
 export default function Reactor({ status }) {
   const mountRef = useRef(null)
   const stateRef = useRef({ status })
-  stateRef.current.status = status
 
   useEffect(() => {
+    stateRef.current.status = status
     const mount = mountRef.current
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(60, mount.clientWidth / mount.clientHeight, 0.1, 100)
@@ -64,6 +64,7 @@ export default function Reactor({ status }) {
       mount.removeChild(renderer.domElement)
       renderer.dispose()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <div ref={mountRef} className="reactor-canvas" />
